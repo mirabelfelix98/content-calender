@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --color-gold: #C9A84C;
+  --color-gold-light: #E2C27A;
+  --color-gold-dim: rgba(201, 168, 76, 0.15);
+  --color-bg: #0A0A0B;
+  --color-surface: #111114;
+  --color-surface2: #18181C;
+  --color-border-gold: rgba(201, 168, 76, 0.2);
+  --color-muted: #888;
+  --color-tiktok: #69C9D0;
+  --color-instagram: #E1306C;
+  --color-twitter: #1DA1F2;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-[#E8E4DC] font-sans text-sm leading-relaxed min-h-screen;
+  }
+}
+
+.day-card {
+  @apply bg-surface border border-white/5 rounded-xl mb-3 overflow-hidden transition-colors;
+}
+
+.day-card:hover {
+  @apply border-border-gold;
+}
+
+.day-card.web-day {
+  @apply border-l-3 border-l-gold;
+}
+
+.day-header {
+  @apply grid grid-cols-[52px_1fr_auto] items-center gap-4 p-4 cursor-pointer select-none;
+}
+
+.day-num {
+  @apply w-11 h-11 rounded-lg bg-gold-dim border border-border-gold flex items-center justify-center font-serif text-lg font-bold text-gold shrink-0;
+}
+
+.day-theme {
+  @apply font-semibold text-sm text-[#E8E4DC] mb-1 truncate;
+}
+
+.day-pillar {
+  @apply text-[11px] text-gold tracking-wider uppercase flex items-center gap-2 flex-wrap;
+}
+
+.web-badge {
+  @apply bg-gold-dim border border-border-gold text-gold text-[9px] px-1.5 py-0.5 rounded-full tracking-wider;
+}
+
+.platform-post {
+  @apply bg-surface2 rounded-lg p-4 border-l-3 border-l-transparent;
+}
+
+.platform-post.tiktok { @apply border-l-tiktok; }
+.platform-post.instagram { @apply border-l-instagram; }
+.platform-post.twitter { @apply border-l-twitter; }
+
+.platform-name {
+  @apply text-[10px] font-semibold tracking-widest uppercase mb-1;
+}
+
+.platform-post.tiktok .platform-name { @apply text-tiktok; }
+.platform-post.instagram .platform-name { @apply text-instagram; }
+.platform-post.twitter .platform-name { @apply text-twitter; }
+
+.post-type {
+  @apply inline-block text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-muted mb-2;
+}
+
+.post-content {
+  @apply text-[13px] text-[#E8E4DC] leading-relaxed;
+}
+
+.post-caption {
+  @apply mt-2 text-[12px] text-muted italic leading-relaxed;
+}
